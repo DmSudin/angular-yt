@@ -7,6 +7,12 @@ import { Component } from '@angular/core';
 })
 export class CarsComponent {
     cars = ['Ford', 'Audi', 'BMW', 'Mazda', 'Lada', 'Bentley'];
+    dates = [
+        new Date(2015, 3, 4).toDateString(),
+        new Date(2011, 2, 5).toDateString(),
+        new Date(2017, 4, 6).toDateString(),
+        new Date(2000, 1, 7).toDateString(),
+    ];
 
     carName = '';
     addCarStatus = false;
@@ -18,12 +24,5 @@ export class CarsComponent {
         this.addCarStatus = true;
         this.cars.push(this.carName);
         this.carName = '';
-    }
-
-    setBigCarText(car: string) {
-        return car.length > 4;
-    }
-
-
-    
+    }    
 }
