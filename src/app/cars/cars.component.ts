@@ -6,6 +6,12 @@ import { Component } from '@angular/core';
     styleUrls: ['./cars.component.scss']
 })
 export class CarsComponent {
+    cars = ['Ford', 'Audi', 'BMW'];
+    items = [
+        {id: 3, name: 'item 1'},
+        {id: 6, name: 'item 2'},
+        {id: 9, name: 'item 3'}
+    ];
 
     carName = '';
     addCarStatus = false;
@@ -15,6 +21,8 @@ export class CarsComponent {
 
     addCar() {
         this.addCarStatus = true;
+        this.cars.push(this.carName);
+        this.carName = '';
     }
 
 
