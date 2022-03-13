@@ -1,4 +1,9 @@
-import { Component, OnInit, EventEmitter, Output} from '@angular/core';
+import { 
+    Component, 
+    EventEmitter, 
+    Output
+} from '@angular/core';
+
 
 @Component({
     selector: 'app-add-car',
