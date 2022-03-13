@@ -6,8 +6,7 @@ import { Component } from '@angular/core';
     styleUrls: ['./cars.component.scss']
 })
 export class CarsComponent {
-    carName = '';
-    carYear = 2017;
+
     cars: Array<{name: string, year: number}> = [
         {name: 'Ford', year: 2015},
         {name: 'Mazda', year: 2010},
@@ -18,9 +17,7 @@ export class CarsComponent {
     constructor() {
     }
 
-    addCar() {
-        this.cars.push({name: this.carName, year: this.carYear});
-        this.carName = '';
-        this.carYear = 2017;
+    updateCarList(car: {name: string, year: number}) {
+        this.cars.push(car);
     }
 }
