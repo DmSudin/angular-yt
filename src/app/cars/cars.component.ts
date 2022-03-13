@@ -6,23 +6,21 @@ import { Component } from '@angular/core';
     styleUrls: ['./cars.component.scss']
 })
 export class CarsComponent {
-    cars = ['Ford', 'Audi', 'BMW', 'Mazda', 'Lada', 'Bentley'];
-    dates = [
-        new Date(2015, 3, 4).toDateString(),
-        new Date(2011, 2, 5).toDateString(),
-        new Date(2017, 4, 6).toDateString(),
-        new Date(2000, 1, 7).toDateString(),
+    carName = '';
+    carYear = 2017;
+    cars: Array<{name: string, year: number}> = [
+        {name: 'Ford', year: 2015},
+        {name: 'Mazda', year: 2010},
+        {name: 'Audi', year: 2017},
     ];
 
-    carName = '';
-    addCarStatus = false;
     
     constructor() {
     }
 
     addCar() {
-        this.addCarStatus = true;
-        this.cars.push(this.carName);
+        this.cars.push({name: this.carName, year: this.carYear});
         this.carName = '';
-    }    
+        this.carYear = 2017;
+    }
 }
