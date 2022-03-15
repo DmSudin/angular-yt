@@ -22,3 +22,4 @@ import { AddCarComponent } from './add-car/add-car.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
