@@ -6,18 +6,20 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { BackgroundDirective } from './directives/background.directive';
 import { MyDirectiveDirective } from './directives/my-directive.directive';
+import { PowPipe } from './pow.pipe';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
+    declarations: [
+        AppComponent,
+        PowPipe
 
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
