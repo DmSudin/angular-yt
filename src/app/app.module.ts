@@ -11,8 +11,7 @@ import { MyDirectiveDirective } from './directives/my-directive.directive';
 @NgModule({
   declarations: [
     AppComponent,
-    BackgroundDirective,
-    MyDirectiveDirective
+
   ],
   imports: [
     BrowserModule,
@@ -22,4 +21,3 @@ import { MyDirectiveDirective } from './directives/my-directive.directive';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
