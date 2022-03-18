@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { BackgroundDirective } from './directives/background.directive';
 import { MyDirectiveDirective } from './directives/my-directive.directive';
 import { PowPipe } from './pow.pipe';
+import { CarFilterPipe } from './car-filter.pipe'
 
 
 @NgModule({
     declarations: [
         AppComponent,
-        PowPipe
+        PowPipe,
+        CarFilterPipe,
 
     ],
     imports: [
