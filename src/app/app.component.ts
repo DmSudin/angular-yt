@@ -1,8 +1,13 @@
 import { Component } from '@angular/core';
+import 'rxjs/Rx';
+import { delay } from 'rxjs/internal/operators';
+import { Observable, of } from 'rxjs';
+
 @Component({
     selector: 'app-root',
     template: `
         <div class="col-xs-8 col-xs-offset-2">
+            <h4>{{ asyncTitle  | async }}</h4>
             <input type="text" class="form-control" [(ngModel)]="searchCar">
             <button class="btn btn-primary" (click)="addCar()">Add</button>
             <hr>
@@ -25,6 +30,11 @@ export class AppComponent {
         {name: 'Mercedes', description: 'WFM 5'},
         {name: 'BMW', description: 'WFM 6'},
     ];
+
+    // doesn't work!
+    // asyncTitle = Observable.of('async text').delay(300);
+    
+    
 
     addCar() {
         this.cars.push({name: 'New car', description: 'WFM'});
