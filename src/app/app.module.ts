@@ -10,6 +10,7 @@ import { PowPipe } from './pow.pipe';
 import { CarFilterPipe } from './car-filter.pipe';
 import { CarComponent } from './car/car.component';
 import { CarAddComponent } from './car-add/car-add.component'
+import { CarsService } from './cars.service';
 
 
 @NgModule({
