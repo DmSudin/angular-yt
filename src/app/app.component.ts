@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -10,4 +11,8 @@ export class AppComponent {
         {type: 'yes', text: 'Da'},
         {type: 'no', text: 'Net'},
     ];
+
+    submitForm(form: NgForm) {
+        console.error('Submitted!', form);
+    }
 }
