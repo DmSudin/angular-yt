@@ -5,7 +5,6 @@ import  { ConsoleService } from '../console.service';
     selector: 'app-car',
     templateUrl: './car.component.html',
     styleUrls: ['./car.component.scss'],
-    providers: [ConsoleService],
 })
 export class CarComponent {
     
