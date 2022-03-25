@@ -1,7 +1,7 @@
 <div class="col-xs-8 col-xs-offset-2">
     <form (ngSubmit)="submitForm(form)" #form="ngForm">
 
-        <div class="form-group">
+        <div class="form-group" [ngClass]="{'has-error': email.invalid && email.touched}">
             <label>Email</label>
             <input 
             type="text" 
@@ -10,7 +10,9 @@
             name="email"
             required
             email
+            #email="ngModel"
             >
+            <p *ngIf="email.invalid && email.touched">Enter valid email</p>
         </div>
 
         <div class="form-group">
