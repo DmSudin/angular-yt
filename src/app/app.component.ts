@@ -12,6 +12,8 @@ export class AppComponent {
         {type: 'yes', text: 'Da'},
         {type: 'no', text: 'Net'},
     ];
+    defaultAnswer = 'no';
+    defaultCountry = 'ru';
 
     submitForm(form: NgForm) {
         console.error('Submitted!', form);
