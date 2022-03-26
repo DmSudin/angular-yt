@@ -8,8 +8,8 @@ import { BackgroundDirective } from './directives/background.directive';
 import { MyDirectiveDirective } from './directives/my-directive.directive';
 import { PowPipe } from './pow.pipe';
 import { CarFilterPipe } from './car-filter.pipe';
+import { HttpClientModule } from '@angular/common/http';
 
-import { CarsService } from './cars.service';
 import { ConsoleService } from './console.service';
 
 

@@ -1,47 +1,11 @@
 <div class="col-xs-8 col-xs-offset-2">
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
-        <div formGroupName="user">
-            <div class="form-group">
-                <label>Email</label>
-                <input type="text" class="form-control" formControlName="email">
-                <p *ngIf="form.get('user.email').invalid && form.get('user.email').touched">
-                    <span *ngIf="form.get('user.email').errors['emailIsUsed']">email is already busy</span>
-                    <span *ngIf="form.get('user.email').errors['email']">enter correct email</span>
-                </p>
-            </div>
-    
-            <div class="form-group">
-                <label>Password</label>
-                <input type="password" class="form-control" formControlName="pass">
-                <p *ngIf="form.get('user.pass').invalid && form.get('user.pass').touched">
-                    <span *ngIf="form.get('user.pass').errors['lengthError']">Password must has length {{charsCount}} or more chars</span>
-                    <span  *ngIf="form.get('user.pass').errors['required']">Password can't be empty</span>
-                </p>
-            </div>
+    <button class="btn btn-primary">Load cars</button>
+    <hr>
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let car of cars">
+            <span class="badge">{{ car.id }}</span>
+            {{ car.name }} ({{car.color}})
+        </li>
+    </ul>
 
-        </div>
-      
-
-        <div class="form-group">
-            <label>Select country</label>
-            <select class="form-control" formControlName="country">
-                <option value="ru">Russia</option>
-                <option value="by">Belarus</option>
-                <option value="ua">Ukraine</option>
-            </select>
-        </div>
-        <div class="radio" *ngFor="let ans of answers">
-            <label>
-                <input 
-                type="radio" 
-                [value]="ans.type"
-                formControlName="answer"
-                name="answer"
-                > {{ ans.text}}
-            </label>
-        </div>
-
-        <button [disabled]="form.invalid" class="btn btn-success" type="submit">Save</button>
-
-    </form>
 </div>
