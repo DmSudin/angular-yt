@@ -1,42 +1,30 @@
-import { Component, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
-
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
 
 })
-export class AppComponent {
-    @ViewChild('form') form: NgForm;
+export class AppComponent implements OnInit {;
+   
     answers = [
         {type: 'yes', text: 'Da'},
         {type: 'no', text: 'Net'},
     ];
-    defaultAnswer = 'no';
-    defaultCountry = 'ru';
-    formData = {};
-    isSubmitted = false;
 
-    addRandEmail() {
-        const randEmail = 'wfm@gmail.com';
-        // this.form.setValue({
-        //     user: {
-        //         pass: '',
-        //         email: randEmail
-        //     },
-        //     country: '',
-        //     answer: '',
-        // });
-        this.form.form.patchValue({
-            user: {email: randEmail}
-        })
+    form: FormGroup;
+
+    ngOnInit() {
+        this.form = new FormGroup({
+            email: new FormControl(''),
+            pass: new FormControl(''),
+            country: new FormControl('ru'),
+            answer: new FormControl('no'),
+        });
     }
 
-    submitForm() {
-        this.isSubmitted = true;
-        this.formData = this.form.value;
-        this.form.reset();
-        console.error('Submitted!', this.form);
+    onSubmit() {
+        console.error('submitted!', this.form);
     }
 }
