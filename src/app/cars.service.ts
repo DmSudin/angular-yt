@@ -1,20 +1,15 @@
 import { Injectable } from "@angular/core";
-import { ConsoleService } from "./console.service";
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class CarsService {
-
-    constructor(private consoleService: ConsoleService) {}
     
-    cars = [
-        {name: 'Ford', isSold: false},
-        {name: 'Mazda', isSold: true},
-        {name: 'Mercedes', isSold: false},        
-    ];
+    constructor(private http: HttpClient) {
 
-    addCar(name: string) {
-        this.cars.push({name, isSold: false});
-        this.consoleService.log(`Car ${name} has been added`);
+    }
+
+    getCars() {
+        return this.http.get('http://localhost:3000/cars');
     }
 
 }
